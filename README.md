@@ -1,2 +1,3 @@
 # ar-detection
-script for detecting atmospheric rivers from reanalysis data
+
+This script uses ERA5 integrated vapour transport (northward and eastward) data to detect and track atmospheric rivers using the IPART Python package.
