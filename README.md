@@ -11,6 +11,6 @@ Script contains parameters set to identify the AR that preceded the A68 iceberg 
 
   
 ### References
-Wille, J., Favier, V., Jourdain, N., Kittel, C., Turton, J., et al. (2022). Intense atmospheric rivers can weaken ice shelf stability at the Antarctic Peninsula. *Communications Earth & Environment, 3*(1), 1-14. [10.1038/s43247-022-00422-9](10.1038/s43247-022-00422-9)  
+Wille, J., Favier, V., Jourdain, N., Kittel, C., Turton, J., et al. (2022). Intense atmospheric rivers can weaken ice shelf stability at the Antarctic Peninsula. *Communications Earth & Environment, 3*(1), 1-14. doi:[10.1038/s43247-022-00422-9](10.1038/s43247-022-00422-9)  
 
-Xu, G., Ma, X., Chang, P., & Wang, L. (2020). Image-processing-based atmospheric river tracking method version 1 (IPART-1). *Geoscientific Model Development, 13*(10), 4639-4662. [10.5194/gmd-13-4639-2020](10.5194/gmd-13-4639-2020)
+Xu, G., Ma, X., & Chang, P. (2020). IPART: A Python package for image-processing based atmospheric river tracking. *Journal of Open Source Software, 55*(55), 2407. doi:[10.21105/joss.02407](https://doi.org/10.21105/joss.02407))
