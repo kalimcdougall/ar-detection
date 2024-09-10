@@ -2,7 +2,7 @@
 
 ## Atmospheric river detection
 
-This script uses ERA5 integrated vapour transport (northward and eastward) data to detect and track atmospheric rivers using the IPART Python package.
+This script uses ERA5 integrated vapour transport (northward and eastward) data to detect and track atmospheric rivers using the [IPART](https://ipart.readthedocs.io/en/latest/) Python package.
 
 Script contains parameters set to identify the AR that preceded the A68 iceberg calvig event from the Larsen C Ice Shelf in July 2017
 - Examples of script outputs provided
