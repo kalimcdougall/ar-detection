@@ -4,7 +4,7 @@
 
 This script uses integrated vapour transport (northward and eastward) data from the [European Center for Medium-Range Weather Forecasts Reanalysis](https://www.ecmwf.int/en/forecasts/dataset/ecmwf-reanalysis-v5) (ERA5) data to detect and track atmospheric rivers using the [IPART](https://ipart.readthedocs.io/en/latest/) Python package.
 
-Script contains parameters set to identify the AR that preceded the A68 iceberg calving event from the Larsen C Ice Shelf in July 2017
+Script contains parameters set to identify the AR that preceded the A68 iceberg calving event from the Larsen C Ice Shelf in July 2017.
 - Examples of script outputs provided
 
 
