@@ -5,7 +5,7 @@ Created on Thu Dec  8 16:34:00 2022
 @author: Kali
 """
 # This code uses the IPART Python package to detect and track atmospheric rivers
-# example is for the atmospheric river that preceded the collapse of the Larsen A Ice Shelf in 1995
+# example is for the atmospheric river that preceded the calving of iceberg A68 from the Larsen C Ice Shelf in 2017
 
 import os, sys
 import pandas as pd
@@ -118,9 +118,9 @@ figure.show()
 #======================================================
 # Detect ARs 
 
-YEAR = 1995
-TIME_START = '1995-01-20 00:00:00' # AR began on Jan 24 & ended Jan 25, iceberg calved Jan 25
-TIME_END = '1995-01-30 00:00:00'
+YEAR = 2017
+TIME_START = '2017-07-01 00:00:00' #AR began on July 5 & ended July 6, iceberg calved July 10-12
+TIME_END = '2017-07-10 00:00:00'
 
 thr_file = dir + 'ivt-THR-kernel-t16-s18.nc'
 
@@ -128,7 +128,7 @@ PLOT = True # Plot figures of ivt with detected ARs
 SHIFT_LON = 60
 
 PARAM_DICT={
-    'thres_low': 500, # kg/m*s, define AR candidates as regions >= this anomalous ivt
+    'thres_low': 400, # kg/m*s, define AR candidates as regions >= this anomalous ivt
     'min_area': 50*1e4, # km^2, drop AR candidates smaller than this area
     'max_area': 1000*1e4, # km^2, drop AR candidates larger than this area
     'min_LW': 2, # float, minimal length/width ratio
@@ -140,14 +140,14 @@ PARAM_DICT={
     'fill_radius': None, # grids, remove small holes in AR contour
     'single_dome': False, # do peak parition or not, used to separated systems merged together with an outer contour
     'max_ph_ratio': 0.6, # max prominence/height ratio of local peak, only used when single_dome=True
-    'edge_eps': 0.4 # minimal proportion of flux component in direction to total flux 
+    'edge_eps': 0.4 # minimal proportion of flux component in direction to total flux to allow edge building in that direction
     }
 
 ivt = funcs.readNC(thr_file, 'ivt')
 ivt_rec = funcs.readNC(thr_file, 'ivt_rec')
 ivt_ano = funcs.readNC(thr_file, 'ivt_ano')
 
-# Shift longitude - for Larsen A
+# Shift longitude - for Larsen C
 uflux = uflux.shiftLon(SHIFT_LON)
 vflux = vflux.shiftLon(SHIFT_LON)
 ivt = ivt.shiftLon(SHIFT_LON)
@@ -278,7 +278,7 @@ plot_ar = track_list[3] # Select AR index to track
 figure = plt.figure(figsize=(12,6), dpi=100)
 ax = figure.add_subplot(111, projection=ccrs.PlateCarree())
 plot.plotARTrack(plot_ar, latax, lonax, ax, full=True)
-plt.title('AR[3] 1995-01-23/25')
+plt.title('AR[2] 2017-07-04/05')
 
 #======================================================
 # Save output
