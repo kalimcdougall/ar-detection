@@ -11,7 +11,7 @@ import os, sys
 import pandas as pd
 import numpy as np
 
-from slugify import slugify #Removes invalid characters from output file name 
+from slugify import slugify # Removes invalid characters from output file name 
 
 from ipart.utils import funcs
 from ipart import thr
@@ -35,18 +35,18 @@ output_file = dir + 'ivt.nc' # Create output file for ivt calculation
 # Compute & plot IVT
 ivtdata = np.ma.sqrt(uflux.data**2 + vflux.data**2) #Calculate ivt
 
-print(np.percentile(ivtdata, 98)) #Find value of 98th ivt percentile
+print(np.percentile(ivtdata, 98)) # Find value of 98th ivt percentile
 
 ivtNV = funcs.NCVAR(ivtdata, 'ivt', uflux.axislist, {'name': 'ivt', 'long_name': 'integrated vapor transport (IVT)',
                                             'standard_name': 'integrated_vapor_transport',
                                             'title': 'integrated vapor transport (IVT)',
-                                            'units': getattr(uflux, 'units', '')}) #Create attributes for ivt file
+                                            'units': getattr(uflux, 'units', '')}) # Create attributes for ivt file
 print('\n# Saving output to:\n', output_file)
-funcs.saveNC(output_file, ivtNV, 'w') #Write output file
+funcs.saveNC(output_file, ivtNV, 'w') # Write output file
 
 # Plot uflux, vflux, & ivt
 figure = plt.figure(figsize=(7,10),dpi=100)
-idx = 95  #Select time step from the beginning
+idx = 95  # Select time step from the beginning
 time_str = uflux.getTime()[idx]
 
 plot_vars = [uflux.data[idx], vflux.data[idx], ivtdata.data[idx]]
@@ -80,7 +80,7 @@ var = ivtNV.shiftLon(SHIFT_LON)
 
 KERNEL = [16,18,18] # Specifies temporal & spatial scales - time steps, number of grids
 
-ivt, ivt_rec, ivt_ano = thr.THR(var, KERNEL) #Perform THR
+ivt, ivt_rec, ivt_ano = thr.THR(var, KERNEL) # Perform THR
 
 # Save THR results to .nc file
 ivt_file = dir + 'ivt.nc'
@@ -96,7 +96,7 @@ funcs.saveNC(abpath_out, ivt_ano, 'a')
 
 # Plot THR results
 figure = plt.figure(figsize=(7,10),dpi=100)
-idx = 95  #Select time step from the beginning
+idx = 95  # Select time step from the beginning
 time_str = ivt.getTime()[idx]
 
 plot_vars = [ivt.data[idx], ivt_rec.data[idx], ivt_ano.data[idx]]
@@ -176,7 +176,7 @@ print('Number of ARs found during %s - %s = %d.' %(TIME_START, TIME_END, len(res
 result_df.head(4)
 
 # Plot detected ARs at single timestep
-plot_idx = time_idx[14] #Define timestep
+plot_idx = time_idx[14] # Define timestep
 
 plot_time = timeax[plot_idx]
 slab = ivt.data[plot_idx]
