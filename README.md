@@ -7,7 +7,7 @@ This script uses integrated vapour transport (northward and eastward) data from 
 Script contains parameters set to identify the AR that preceded the A68 iceberg calving event from the Larsen C Ice Shelf in July 2017.
 - Examples of script outputs provided
 
-
+  <img src="./AR_2017_07_04-05.gif" width="50%" height="50%"/>
 
   
 ### References
