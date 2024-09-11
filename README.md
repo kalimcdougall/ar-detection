@@ -9,7 +9,7 @@ Script contains parameters set to identify the AR that preceded the A68 iceberg 
 
 &nbsp;
 
-  <img src="./outputs/AR_2017_07_04-05.gif" width="50%" height="50%"/>
+  <img src="./outputs/AR_2017_07_04-05.gif" width="70%" height="70%"/>
 
 &nbsp;
    
