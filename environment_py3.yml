@@ -1,0 +1,14 @@
+name: ipartpy3
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.7
+  - netcdf4
+  - numpy
+  - scipy
+  - matplotlib
+  - networkx
+  - pandas
+  - scikit-image
+  - cartopy
